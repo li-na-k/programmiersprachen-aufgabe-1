@@ -3,7 +3,6 @@
 
 #define CATCH_CONFIG_RUNNER 
 #include "../external/catch-1.4.0/catch.hpp" 
-#include <exception>
 #include <cmath>
 
 int gcd(int a, int b){ 
@@ -20,22 +19,13 @@ int gcd(int a, int b){
   }
 }
 
-TEST_CASE("normaler Bereich", "[gcd]"){
+TEST_CASE("größter_gemeinsamen_teiler_bestimmen", "[gcd]"){
   REQUIRE(gcd(2,4) == 2); 
   REQUIRE(gcd(9,6) == 3); 
   REQUIRE(gcd(3,7) == 1);
-}
-
-TEST_CASE("a or b is zero", "[gcd]"){  
   REQUIRE(gcd(0,5) == 5);
   REQUIRE(gcd(4,0) == 4);
-}
-
-TEST_CASE("both zero", "[gcd]"){ 
   REQUIRE(gcd(0,0) == -1); 
-}
-
-TEST_CASE("negative numbers", "[gcd]"){
   REQUIRE(gcd(-1,0) == 1); 
   REQUIRE(gcd(0,-8) == 8); 
   REQUIRE(gcd(-9,-6) == 3); 
